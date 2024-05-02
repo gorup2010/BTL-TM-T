@@ -1,0 +1,461 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "user1",
+      "password": "password1",
+      "role": "USER",
+      "status": "ACTIVE",
+      "email": "user1@example.com",
+      "full_name": "User One",
+      "phone": "123456789",
+      "avatar": "https://bizweb.dktcdn.net/100/438/408/files/gigachad-meme-yodyvn.jpg?v=1696388231581"
+    },
+    {
+      "id": 2,
+      "username": "user2",
+      "password": "password2",
+      "role": "USER",
+      "status": "ACTIVE",
+      "email": "user2@example.com",
+      "full_name": "User Two",
+      "phone": "987654321",
+      "avatar": "https://example.com/avatar2.jpg"
+    }
+  ],
+
+  "dictricts": [
+    {
+      "id": 1,
+      "name": "Thành phố Thủ Đức",
+      "wards": [
+        { "name": "Phường An Khánh" },
+        { "name": "Phường An Lợi Đông" },
+        { "name": "Phường An Phú" },
+        { "name": "Phường Bình Chiểu" },
+        { "name": "Phường Bình Thọ" },
+        { "name": "Phường Bình Trưng Đông" },
+        { "name": "Phường Bình Trưng Tây" },
+        { "name": "Phường Cát Lái" },
+        { "name": "Phường Hiệp Bình Chánh" },
+        { "name": "Phường Hiệp Bình Phước" },
+        { "name": "Phường Hiệp Phú" },
+        { "name": "Phường Linh Chiểu" },
+        { "name": "Phường Linh Đông" },
+        { "name": "Phường Linh Tây" },
+        { "name": "Phường Linh Trung" },
+        { "name": "Phường Linh Xuân" },
+        { "name": "Phường Long Bình" },
+        { "name": "Phường Long Phước" },
+        { "name": "Phường Long Thạnh Mỹ" },
+        { "name": "Phường Long Trường" },
+        { "name": "Phường Phú Hữu" },
+        { "name": "Phường Phước Bình" },
+        { "name": "Phường Phước Long A" },
+        { "name": "Phường Phước Long B" },
+        { "name": "Phường Tam Bình" },
+        { "name": "Phường Tam Phú" },
+        { "name": "Phường Tăng Nhơn Phú A" },
+        { "name": "Phường Tăng Nhơn Phú B" },
+        { "name": "Phường Tân Phú" },
+        { "name": "Phường Thảo Điền" },
+        { "name": "Phường Thạnh Mỹ Lợi" },
+        { "name": "Phường Thủ Thiêm" },
+        { "name": "Phường Trường Thạnh" },
+        { "name": "Phường Trường Thọ" }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Quận 1",
+      "wards": [
+        { "name": "Phường Bến Nghé" },
+        { "name": "Phường Bến Thành" },
+        { "name": "Phường Cầu Kho" },
+        { "name": "Phường Cầu Ông Lãnh" },
+        { "name": "Phường Cô Giang" },
+        { "name": "Phường Đa Kao" },
+        { "name": "Phường Nguyễn Cư Trinh" },
+        { "name": "Phường Nguyễn Thái Bình" },
+        { "name": "Phường Phạm Ngũ Lão" },
+        { "name": "Phường Tân Định" }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Quận 3",
+      "wards": [
+        { "name": "Phường 01" },
+        { "name": "Phường 02" },
+        { "name": "Phường 03" },
+        { "name": "Phường 04" },
+        { "name": "Phường 05" },
+        { "name": "Phường Võ Thị Sáu" },
+        { "name": "Phường 09" },
+        { "name": "Phường 10" },
+        { "name": "Phường 11" },
+        { "name": "Phường 12" },
+        { "name": "Phường 13" },
+        { "name": "Phường 14" }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Quận 4",
+      "wards": [
+        { "name": "Phường 01" },
+        { "name": "Phường 02" },
+        { "name": "Phường 03" },
+        { "name": "Phường 04" },
+        { "name": "Phường 06" },
+        { "name": "Phường 08" },
+        { "name": "Phường 09" },
+        { "name": "Phường 10" },
+        { "name": "Phường 13" },
+        { "name": "Phường 14" },
+        { "name": "Phường 15" },
+        { "name": "Phường 16" },
+        { "name": "Phường 18" }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Quận 5",
+      "wards": [
+        { "name": "Phường 01" },
+        { "name": "Phường 02" },
+        { "name": "Phường 03" },
+        { "name": "Phường 04" },
+        { "name": "Phường 06" },
+        { "name": "Phường 08" },
+        { "name": "Phường 09" },
+        { "name": "Phường 10" },
+        { "name": "Phường 13" },
+        { "name": "Phường 14" },
+        { "name": "Phường 15" },
+        { "name": "Phường 16" },
+        { "name": "Phường 18" }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Quận 6",
+      "wards": [
+        { "name": "Phường 01" },
+        { "name": "Phường 02" },
+        { "name": "Phường 03" },
+        { "name": "Phường 04" },
+        { "name": "Phường 06" },
+        { "name": "Phường 08" },
+        { "name": "Phường 09" },
+        { "name": "Phường 10" },
+        { "name": "Phường 13" },
+        { "name": "Phường 14" },
+        { "name": "Phường 15" },
+        { "name": "Phường 16" },
+        { "name": "Phường 18" }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Quận 7",
+      "wards": [
+        { "name": "Phường 01" },
+        { "name": "Phường 02" },
+        { "name": "Phường 03" },
+        { "name": "Phường 04" },
+        { "name": "Phường 06" },
+        { "name": "Phường 08" },
+        { "name": "Phường 09" },
+        { "name": "Phường 10" },
+        { "name": "Phường 13" },
+        { "name": "Phường 14" },
+        { "name": "Phường 15" },
+        { "name": "Phường 16" },
+        { "name": "Phường 18" }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Quận 8",
+      "wards": [
+        { "name": "Phường 01" },
+        { "name": "Phường 02" },
+        { "name": "Phường 03" },
+        { "name": "Phường 04" },
+        { "name": "Phường 06" },
+        { "name": "Phường 08" },
+        { "name": "Phường 09" },
+        { "name": "Phường 10" },
+        { "name": "Phường 13" },
+        { "name": "Phường 14" },
+        { "name": "Phường 15" },
+        { "name": "Phường 16" },
+        { "name": "Phường 18" }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Quận 10",
+      "wards": [
+        { "name": "Phường 01" },
+        { "name": "Phường 02" },
+        { "name": "Phường 03" },
+        { "name": "Phường 04" },
+        { "name": "Phường 06" },
+        { "name": "Phường 08" },
+        { "name": "Phường 09" },
+        { "name": "Phường 10" },
+        { "name": "Phường 13" },
+        { "name": "Phường 14" },
+        { "name": "Phường 15" },
+        { "name": "Phường 16" },
+        { "name": "Phường 18" }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Quận 11",
+      "wards": [
+        { "name": "Phường 01" },
+        { "name": "Phường 02" },
+        { "name": "Phường 03" },
+        { "name": "Phường 04" },
+        { "name": "Phường 06" },
+        { "name": "Phường 08" },
+        { "name": "Phường 09" },
+        { "name": "Phường 10" },
+        { "name": "Phường 13" },
+        { "name": "Phường 14" },
+        { "name": "Phường 15" },
+        { "name": "Phường 16" },
+        { "name": "Phường 18" }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Quận 12",
+      "wards": [
+        { "name": "Phường 01" },
+        { "name": "Phường 02" },
+        { "name": "Phường 03" },
+        { "name": "Phường 04" },
+        { "name": "Phường 06" },
+        { "name": "Phường 08" },
+        { "name": "Phường 09" },
+        { "name": "Phường 10" },
+        { "name": "Phường 13" },
+        { "name": "Phường 14" },
+        { "name": "Phường 15" },
+        { "name": "Phường 16" },
+        { "name": "Phường 18" }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Quận Bình Tân",
+      "wards": [
+        { "name": "Phường An Lạc" },
+        { "name": "Phường An Lạc A" },
+        { "name": "Phường Bình Hưng Hòa" },
+        { "name": "Phường Bình Hưng Hoà A" },
+        { "name": "Phường Bình Hưng Hoà B" },
+        { "name": "Phường Bình Trị Đông" },
+        { "name": "Phường Bình Trị Đông A" },
+        { "name": "Phường Bình Trị Đông B" },
+        { "name": "Phường Tân Tạo" },
+        { "name": "Phường Tân Tạo A" }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Quận Bình Thạnh",
+      "wards": [
+        { "name": "Phường 01" },
+        { "name": "Phường 02" },
+        { "name": "Phường 03" },
+        { "name": "Phường 04" },
+        { "name": "Phường 06" },
+        { "name": "Phường 08" },
+        { "name": "Phường 09" },
+        { "name": "Phường 10" },
+        { "name": "Phường 13" },
+        { "name": "Phường 14" },
+        { "name": "Phường 15" },
+        { "name": "Phường 16" },
+        { "name": "Phường 18" }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Quận Gò Vấp",
+      "wards": [
+        { "name": "Phường 01" },
+        { "name": "Phường 02" },
+        { "name": "Phường 03" },
+        { "name": "Phường 04" },
+        { "name": "Phường 06" },
+        { "name": "Phường 08" },
+        { "name": "Phường 09" },
+        { "name": "Phường 10" },
+        { "name": "Phường 13" },
+        { "name": "Phường 14" },
+        { "name": "Phường 15" },
+        { "name": "Phường 16" },
+        { "name": "Phường 18" }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Quận Phú Nhuận",
+      "wards": [
+        { "name": "Phường 01" },
+        { "name": "Phường 02" },
+        { "name": "Phường 03" },
+        { "name": "Phường 04" },
+        { "name": "Phường 06" },
+        { "name": "Phường 08" },
+        { "name": "Phường 09" },
+        { "name": "Phường 10" },
+        { "name": "Phường 13" },
+        { "name": "Phường 14" },
+        { "name": "Phường 15" },
+        { "name": "Phường 16" },
+        { "name": "Phường 18" }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Quận Tân Bình",
+      "wards": [
+        { "name": "Phường 01" },
+        { "name": "Phường 02" },
+        { "name": "Phường 03" },
+        { "name": "Phường 04" },
+        { "name": "Phường 06" },
+        { "name": "Phường 08" },
+        { "name": "Phường 09" },
+        { "name": "Phường 10" },
+        { "name": "Phường 13" },
+        { "name": "Phường 14" },
+        { "name": "Phường 15" },
+        { "name": "Phường 16" },
+        { "name": "Phường 18" }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Quận Tân Phú",
+      "wards": [
+        { "name": "Phường 01" },
+        { "name": "Phường 02" },
+        { "name": "Phường 03" },
+        { "name": "Phường 04" },
+        { "name": "Phường 06" },
+        { "name": "Phường 08" },
+        { "name": "Phường 09" },
+        { "name": "Phường 10" },
+        { "name": "Phường 13" },
+        { "name": "Phường 14" },
+        { "name": "Phường 15" },
+        { "name": "Phường 16" },
+        { "name": "Phường 18" }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Huyện Bình Chánh",
+      "wards": [
+        { "name": "Phường 01" },
+        { "name": "Phường 02" },
+        { "name": "Phường 03" },
+        { "name": "Phường 04" },
+        { "name": "Phường 06" },
+        { "name": "Phường 08" },
+        { "name": "Phường 09" },
+        { "name": "Phường 10" },
+        { "name": "Phường 13" },
+        { "name": "Phường 14" },
+        { "name": "Phường 15" },
+        { "name": "Phường 16" },
+        { "name": "Phường 18" }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Huyện Cần Giờ",
+      "wards": [
+        { "name": "Phường 01" },
+        { "name": "Phường 02" },
+        { "name": "Phường 03" },
+        { "name": "Phường 04" },
+        { "name": "Phường 06" },
+        { "name": "Phường 08" },
+        { "name": "Phường 09" },
+        { "name": "Phường 10" },
+        { "name": "Phường 13" },
+        { "name": "Phường 14" },
+        { "name": "Phường 15" },
+        { "name": "Phường 16" },
+        { "name": "Phường 18" }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Huyện Củ Chi",
+      "wards": [
+        { "name": "Phường 01" },
+        { "name": "Phường 02" },
+        { "name": "Phường 03" },
+        { "name": "Phường 04" },
+        { "name": "Phường 06" },
+        { "name": "Phường 08" },
+        { "name": "Phường 09" },
+        { "name": "Phường 10" },
+        { "name": "Phường 13" },
+        { "name": "Phường 14" },
+        { "name": "Phường 15" },
+        { "name": "Phường 16" },
+        { "name": "Phường 18" }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Huyện Hóc Môn",
+      "wards": [
+        { "name": "Phường 01" },
+        { "name": "Phường 02" },
+        { "name": "Phường 03" },
+        { "name": "Phường 04" },
+        { "name": "Phường 06" },
+        { "name": "Phường 08" },
+        { "name": "Phường 09" },
+        { "name": "Phường 10" },
+        { "name": "Phường 13" },
+        { "name": "Phường 14" },
+        { "name": "Phường 15" },
+        { "name": "Phường 16" },
+        { "name": "Phường 18" }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Huyện Nhà Bè",
+      "wards": [
+        { "name": "Phường 01" },
+        { "name": "Phường 02" },
+        { "name": "Phường 03" },
+        { "name": "Phường 04" },
+        { "name": "Phường 06" },
+        { "name": "Phường 08" },
+        { "name": "Phường 09" },
+        { "name": "Phường 10" },
+        { "name": "Phường 13" },
+        { "name": "Phường 14" },
+        { "name": "Phường 15" },
+        { "name": "Phường 16" },
+        { "name": "Phường 18" }
+      ]
+    }
+  ]
+}
