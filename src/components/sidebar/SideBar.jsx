@@ -44,21 +44,26 @@ const Sidebar = () => {
                 : 'my-1 p-3 hover:cursor-pointer hover:bg-[#E7E6EC] item'
             }
           >
-            Đăng tin cho thuê
+            {
+              userInfo?.role === "ADMIN" ? "Duyệt bài đăng" : "Đăng tin cho thuê"
+            }
           </div>
         </Link>
  
-        <Link to="/user/post-history" onClick={() => setActiveTab(2)}>
-          <div
-            className={
-              activeTab === 2
-                ? 'my-1 p-3 hover:cursor-pointer hover:bg-[#E7E6EC] item bg-[#E7E6EC]'
-                : 'my-1 p-3 hover:cursor-pointer hover:bg-[#E7E6EC] item'
-            }
-          >
-            Lịch sử đăng tin
-          </div>
-        </Link>
+        {
+          userInfo?.role !== "ADMIN" && 
+            <Link to="/user/post-history" onClick={() => setActiveTab(2)}>
+              <div
+                className={
+                  activeTab === 2
+                    ? 'my-1 p-3 hover:cursor-pointer hover:bg-[#E7E6EC] item bg-[#E7E6EC]'
+                    : 'my-1 p-3 hover:cursor-pointer hover:bg-[#E7E6EC] item'
+                }
+              >
+                Lịch sử đăng tin
+              </div>
+            </Link>
+        }
  
         <Link to="/user/profile" onClick={() => setActiveTab(3)}>
           <div
@@ -71,7 +76,12 @@ const Sidebar = () => {
             Thông tin cá nhân
           </div>
         </Link> 
-        <Link
+
+        {
+          userInfo?.role !== "ADMIN" &&
+          <>
+          
+          <Link
           to="/user/Recharge"
           onClick={() => setActiveTab(4)}
         >
@@ -114,6 +124,9 @@ const Sidebar = () => {
             Lịch sử thanh toán
           </div>
         </Link>
+
+          </>
+        }
       </div>
     </div>
   );
