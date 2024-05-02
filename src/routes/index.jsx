@@ -7,6 +7,7 @@ import NotFound from '../pages/notFound/NotFound'
 import PostNew from '../pages/postNew/PostNew';
 import PostHistory from '../pages/postHistory/PostHistory'
 import Login from "../pages/login/Login";
+import Home from "../pages/Home";
 
 export const routes = [
   {
@@ -15,7 +16,7 @@ export const routes = [
     children: [
       {
         index: true,
-        element: <h1>Your content</h1>,
+        element: <Home />,
       },
     ],
   },

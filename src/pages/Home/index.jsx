@@ -14,9 +14,9 @@ import {
 
 
 const selectedStyle =
-  "bg-blue-400 text-center font-semibold text-sm rounded-t-md h-8 flex justify-center items-center";
+  "bg-cyan-500 text-center font-semibold text-sm rounded-t-md h-8 flex justify-center items-center text-white";
 const nonSelectedStyle =
-  "hover:bg-blue-400 text-center font-medium text-sm rounded-t-md flex justify-center items-center";
+  "hover:bg-cyan-500 hover:text-white text-center font-medium text-sm rounded-t-md flex justify-center items-center";
 
 const Home = () => {
   const [type, setType] = useState(1);
@@ -59,7 +59,7 @@ const Home = () => {
             Nhà cho thuê
           </Grid>
         </Grid>
-        <div className="w-7/12 bg-blue-400 p-4">
+        <div className="w-7/12 bg-cyan-500 p-4">
           <Grid container columnGap={1} rowGap={1}>
             <Grid item xs={10}>
               <Box className="bg-white rounded-[4px] border border-solid flex items-center h-9 p-1 ">
