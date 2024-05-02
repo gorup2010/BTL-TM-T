@@ -3,8 +3,11 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { createPost } from '../../service/post';
 import { notification } from 'antd';
+import { useApp } from '../../provider/AppProvider';
 
 const PostNew = () => {
+    const {userInfo} = useApp()
+
     const [district, setDistrict] = useState([''])
     const [ward , setWard] = useState([''])
     const [images , setImages] = useState({
@@ -63,9 +66,9 @@ const PostNew = () => {
             ward: e.target.ward.value,
             district: e.target.district.value,
             city: e.target.city.value,
+            username: userInfo?.username,
+            is_accept: false
         }
-
-        console.log(123)
 
         createPostMutation(postData, {
           onSuccess: () => {
@@ -73,7 +76,7 @@ const PostNew = () => {
               message: 'Success',
               description: 'Create post successfully!'
             })
-          }
+          },
         })
     }
 
