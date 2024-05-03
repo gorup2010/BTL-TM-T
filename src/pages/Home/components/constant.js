@@ -110,7 +110,7 @@ export const postTypeFilter = {
 
 export const universityFilter = {
   type: "university",
-  title: "Trường đại học",
+  title: "Chọn trường đại học",
   titleExpaned: "Chọn theo trường đại học",
   options: [
     {

@@ -8,6 +8,7 @@ import PostNew from '../pages/postNew/PostNew';
 import PostHistory from '../pages/postHistory/PostHistory'
 import Login from "../pages/login/Login";
 import Home from "../pages/Home";
+import Recharge from "../pages/Recharge";
 
 export const routes = [
   {
@@ -32,7 +33,15 @@ export const routes = [
         path: 'post-history',
         element: <PostHistory />,
       },
+      {
+        path: 'history-money',
+        element: <Recharge />,
+      }
     ],
+  },
+  {
+    path: 'history-money',
+    element: <Recharge />,
   },
   {
     path: path.login,
