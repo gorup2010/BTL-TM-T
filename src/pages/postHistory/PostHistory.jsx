@@ -1,7 +1,9 @@
 import { useNavigate } from "react-router-dom";
+import { useApp } from '../../provider/AppProvider';
 
 const PostHistory = () => {
   const navigate = useNavigate();
+  const { userInfo } = useApp();
   const [posts, setPosts] = useState([""]);
   const getPosts = async () => {
     await axios.get("http://localhost:3000/posts").then(res => setPosts(res.data));
@@ -36,8 +38,8 @@ const PostHistory = () => {
             </th>
           </thead>
           <tbody className="text-sm">
-            {posts.totalPosts ? (
-              posts.result.map((post) => {
+            {(posts.username === userInfo.username ) ? (
+              posts.map((post) => {
                 return (
                   <tr
                     className="grid grid-cols-16 font-bold rounded-[4px]"
