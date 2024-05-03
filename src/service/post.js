@@ -8,3 +8,12 @@ export const createPost = async (body) => {
     throw new Error("Create post failed");
   }
 };
+
+export const getPost = async () => {
+  try {
+    const response = await http.get("/posts");
+    return response.data;
+  } catch (e) {
+    throw new Error("Create post failed");
+  }
+};
