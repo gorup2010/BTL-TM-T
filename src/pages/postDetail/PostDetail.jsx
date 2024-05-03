@@ -1,24 +1,45 @@
-import { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
-import DatabaseContext from "../../context/DatabaseProvider";
 import { Card, Button } from "flowbite-react";
 import {
   CurrencyDollarIcon,
   ArrowsPointingOutIcon,
-  MapPinIcon,StarIcon,ArrowRightIcon
+  MapPinIcon,
+  StarIcon,
+  ArrowRightIcon,
 } from "@heroicons/react/24/outline";
+import { getPostById, getPosts } from "../../service/post";
+import { useEffect, useState } from "react";
+import { HeartFilled, HeartOutlined } from "@ant-design/icons";
 
 const PostDetail = () => {
   const { id } = useParams();
-  const { getPostById, posts } = useContext(DatabaseContext);
-  const post = getPostById(id);
-  const recommendPosts = posts;
+  const [posts, setPosts] = useState([]);
+  const [post, setPost] = useState({});
+  const [like, setLike] = useState(false)
+
+  useEffect(() => {
+    try {
+      getPosts().then((data) => setPosts(data));
+      getPostById(id).then((data) => setPost(data));
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
+  const recommendPosts = posts.filter((data) => data.zone === post.zone && data.id !==post.id);
   return (
-    <div className="flex px-12 justify-center ">
-      <Card className="w-1/2 mx-6 flex flex-col px-4">
-        <img className="rounded-2xl w-4/5 my-4 self-center" src={post.photo} />
-        <h2 className="font-bold text-red-500 mt-2">{post.name}</h2>
-        <ul className="text-lg">
+    <div className="flex mx-12 my-6 justify-center">
+      <Card className="w-[55%] ml-8 mr-2 flex flex-col px-4">
+      <Button
+          onClick={()=>setLike(!like)}
+          color="light"
+          className="w-fit drop-shadow-md hover:text-red-600 hover:border-red-600 self-center text-red-500"
+        >
+          {!like?<HeartOutlined className="mr-1 mt-1 w-4"/>:<HeartFilled className="mr-1 mt-1 w-4"/>}Yêu thích tin
+        </Button>
+        <img className="rounded-2xl w-4/5 my-4 self-center" src={post.image} />
+        
+        <h2 className="font-bold text-red-500 mt-2">{post.title}</h2>
+        <ul className="text-lg ">
           <li className="flex my-2 text-teal-800">
             <CurrencyDollarIcon className="w-6 mx-2" /> Giá thuê: {post.price}{" "}
             triệu/tháng
@@ -35,7 +56,7 @@ const PostDetail = () => {
           </li>
         </ul>
         <h3 className="font-semibold mt-2">Thông tin mô tả</h3>
-        <p>{post.description}</p>
+        <p>{post.desc}</p>
         <Button
           color="blue"
           className="w-fit p-2 drop-shadow-2xl hover:bg-blue-600 self-center"
@@ -51,27 +72,27 @@ const PostDetail = () => {
           <ArrowRightIcon className="w-4" />
         </Button>
       </Card>
-      <Card className="w-1/3 mx-6  items-center gap-4 bg-slate-50">
-        <h4 className="font-semibold mt-4 text-yellow-900 flex">
+      <Card className="w-[30%] mx-6  items-center gap-4 bg-slate-50 ">
+        <h4 className="font-semibold mt-4 text-yellow-900 flex self-center">
           <StarIcon className="w-4" /> ĐỀ XUẤT PHÒNG CÙNG KHU VỰC
         </h4>
         {recommendPosts.map((post) => (
           <Link to={"../post-detail/" + post.id}>
-            <Card horizontal className="max-w-80" imgSrc={post.photo}>
+            <Card className="max-w-96" imgSrc={post.image}>
               <h4 className="font-bold tracking-tight text-gray-900 dark:text-white whitespace-nowrap overflow-hidden text-ellipsis">
-                {post.name}
+                {post.title}
               </h4>
-              <ul className="text flex justify-between">
+              <ul className="text flex justify-between text-xs">
                 <li className="flex mb-2 text-teal-800">
-                  <CurrencyDollarIcon className="w-6 mx-1" />
+                  <CurrencyDollarIcon className="w-4 mx-1" />
                   {post.price} triệu/tháng
                 </li>
                 <li className="flex mb-2 text-red-800">
-                  <MapPinIcon className="w-6 mx-1" />
+                  <MapPinIcon className="w-4 mx-1" />
                   {post.zone}
                 </li>
                 <li className="flex mb-2 text-blue-800">
-                  <ArrowsPointingOutIcon className="w-6 mx-1" />
+                  <ArrowsPointingOutIcon className="w-4 mx-1" />
                   {post.area}
                   <span>
                     m<sup>2</sup>
