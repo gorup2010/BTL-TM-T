@@ -9,6 +9,9 @@ const PostHistory = () => {
     await axios.get("http://localhost:3000/posts").then(res => setPosts(res.data));
   };
 
+  const postFilter = (post) => post.username === userInfo.username;
+  const filter = posts.filter(postFilter)
+
   useEffect(() => {
     getPosts();
   }, [])
@@ -38,9 +41,9 @@ const PostHistory = () => {
             </th>
           </thead>
           <tbody className="text-sm">
-            {(posts.username === userInfo.username ) ? (
-              posts.map((post) => {
-                return (
+            {(filter.length() > 0) ? filter.map(post => {
+              return (
+                <>
                   <tr
                     className="grid grid-cols-16 font-bold rounded-[4px]"
                     key={post.id}
@@ -70,10 +73,10 @@ const PostHistory = () => {
                     <td className=" border border-slate-300 col-span-2 p-1">
                       {post.is_accept}
                     </td>
-                  </tr>
-                );
-              })
-            ) : (
+                  </tr> 
+                </>
+              )
+            }) : (
               <div className="py-2">
                 Bạn chưa có tin đăng nào. Bấm{" "}
                 <button
