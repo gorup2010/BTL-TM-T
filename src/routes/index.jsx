@@ -9,6 +9,7 @@ import PostHistory from '../pages/postHistory/PostHistory'
 import Login from "../pages/login/Login";
 import Home from "../pages/Home";
 import Recharge from "../pages/Recharge";
+import ServicesTable from "../pages/servicePrice/ServicesTable";
 
 export const routes = [
   {
@@ -19,6 +20,10 @@ export const routes = [
         index: true,
         element: <Home />,
       },
+      {
+        path: "services",
+        element: <ServicesTable />,
+      }
     ],
   },
   {

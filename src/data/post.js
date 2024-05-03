@@ -1,6 +1,6 @@
 export const posts = [
   {
-    "title": "Phòng đầy full nội thất có gác 35m2 ,trung tâm quận 1chợ tân định",
+    "title": "Phòng đầy đủ nội thất có gác 35m2 ,trung tâm quận 1 chợ Tân Định",
     "createDateAgo": "Đã đăng 4 tháng trước",
     "price": "5.5 triệu/tháng",
     "area": "35 ㎡",
@@ -24,7 +24,7 @@ export const posts = [
     "image": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2023/01/27/z4064025740041-0c32a1d0197c20b63c64a57df8c64959_1674785592.jpg"
   },
   {
-    "title": "Chỉ 1phòng 3tr4 máy lạnh, nước nóng gần ngã tư thủ đức và các trường ĐH, khu CNC chỉ từ 1-2km",
+    "title": "Chỉ 1 phòng 3tr4 máy lạnh, nước nóng gần ngã tư Thủ Đức và các trường ĐH, khu CNC chỉ từ 1-2km",
     "createDateAgo": "Đã đăng 4 tháng trước",
     "price": "3.4 triệu/tháng",
     "area": "15 ㎡",
@@ -32,7 +32,7 @@ export const posts = [
     "image": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2023/11/02/z4259576833620-ab2d52aa59a34ed66e3ddf5795299b52_1698883068.jpg"
   },
   {
-    "title": "KTX Homestay Villa dài hạn TT Q1 miễn phí: điện, nước, net chỉ 1,4 triệu/tháng",
+    "title": "KTX Homestay Villa dài hạn trung tâm quận 1 miễn phí: điện, nước, net chỉ 1,4 triệu/tháng",
     "createDateAgo": "Đã đăng 4 tháng trước",
     "price": "1.4 triệu/tháng",
     "area": "380 ㎡",
@@ -56,7 +56,7 @@ export const posts = [
     "image": "https://pt123.cdn.static123.com/images/thumbs/900x600/fit/2018/08/31/1535649381084_1535694003.jpg"
   },
   {
-    "title": "Cho thuê phòng M?i,thang máy, khu an ninh s?ch thoáng ngay khu Ch? B?n Thành Q1",
+    "title": "Cho thuê phòng mới,thang máy, khu an ninh sạch thoáng ngay khu Chợ Bến Thành Q1",
     "createDateAgo": "Đã đăng 4 tháng trước",
     "price": "6.8 triệu/tháng",
     "area": "35 ㎡",

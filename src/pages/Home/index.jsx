@@ -33,7 +33,7 @@ const Home = () => {
   return (
     <>
       <div className="flex flex-col items-center py-10">
-        <Grid container className="w-7/12" columnGap={1}>
+        <Grid container className="w-9/12" columnGap={1}>
           <Grid
             item
             xs={2}
@@ -59,7 +59,7 @@ const Home = () => {
             Nhà cho thuê
           </Grid>
         </Grid>
-        <div className="w-7/12 bg-cyan-500 p-4">
+        <div className="w-9/12 bg-cyan-500 p-4">
           <Grid container columnGap={1} rowGap={1}>
             <Grid item xs={10}>
               <Box className="bg-white rounded-[4px] border border-solid flex items-center h-9 p-1 ">
