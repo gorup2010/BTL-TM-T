@@ -24,7 +24,7 @@ const PostDetail = () => {
     } catch (err) {
       console.log(err);
     }
-  }, []);
+  }, [id]);
   const recommendPosts = posts.filter((data) => data.zone === post.zone && data.id !==post.id);
   return (
     <div className="flex mx-12 my-6 justify-center">
@@ -36,7 +36,7 @@ const PostDetail = () => {
         >
           {!like?<HeartOutlined className="mr-1 mt-1 w-4"/>:<HeartFilled className="mr-1 mt-1 w-4"/>}Yêu thích tin
         </Button>
-        <img className="rounded-2xl w-4/5 my-4 self-center" src={post.image} />
+        <img className="rounded-2xl w-4/5 my-4 self-center h-96" src={post.image} />
         
         <h2 className="font-bold text-red-500 mt-2">{post.title}</h2>
         <ul className="text-lg ">
@@ -72,13 +72,13 @@ const PostDetail = () => {
           <ArrowRightIcon className="w-4" />
         </Button>
       </Card>
-      <Card className="w-[30%] mx-6  items-center gap-4 bg-slate-50 ">
+      <Card className="w-[30%] mx-6 items-center self-start gap-4 bg-slate-50">
         <h4 className="font-semibold mt-4 text-yellow-900 flex self-center">
           <StarIcon className="w-4" /> ĐỀ XUẤT PHÒNG CÙNG KHU VỰC
         </h4>
         {recommendPosts.map((post) => (
           <Link to={"../post-detail/" + post.id}>
-            <Card className="max-w-96" imgSrc={post.image}>
+            <Card className="max-w-[350px]" renderImage={() => <img className="h-52" src={post.image} alt="" />}>
               <h4 className="font-bold tracking-tight text-gray-900 dark:text-white whitespace-nowrap overflow-hidden text-ellipsis">
                 {post.title}
               </h4>
