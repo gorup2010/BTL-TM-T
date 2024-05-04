@@ -10,7 +10,7 @@ const Footer = memo(() => {
       <div className="flex flex-col lg:flex-row justify-between items-start space-y-4 md:space-y-0  mx-auto px-10 py-0">
         <section>
           <span className="text-4xl text-cyan-600 font-semibold">
-            <Link to="/">BKHostel</Link>
+            <Link to="/">BKInn</Link>
           </span>
         </section>
         <section>

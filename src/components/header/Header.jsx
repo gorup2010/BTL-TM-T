@@ -77,7 +77,7 @@ return (
       <span
         className="text-4xl text-cyan-600 font-semibold cursor-pointer"
       >
-        BKHostel
+        BKInn
       </span>
       <div className="flex flex-col items-start  justify-center md:items-center md:flex-row space-y-2 md:space-y-0 space-x-0 md:space-x-16">
 
