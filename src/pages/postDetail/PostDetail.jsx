@@ -15,7 +15,7 @@ const PostDetail = () => {
   const { id } = useParams();
   const [posts, setPosts] = useState([]);
   const [post, setPost] = useState({});
-  const [like, setLike] = useState(false)
+  const [like, setLike] = useState(false);
 
   useEffect(() => {
     try {
@@ -25,19 +25,33 @@ const PostDetail = () => {
       console.log(err);
     }
   }, [id]);
-  const recommendPosts = posts.filter((data) => data.zone === post.zone && data.id !==post.id);
+  const recommendPosts = posts.filter(
+    (data) => data.zone === post.zone && data.id !== post.id
+  );
   return (
     <div className="flex mx-12 my-6 justify-center">
       <Card className="w-[55%] ml-8 mr-2 flex flex-col px-4">
-      <Button
-          onClick={()=>setLike(!like)}
-          color="light"
-          className="w-fit drop-shadow-md hover:text-red-600 hover:border-red-600 self-center text-red-500"
-        >
-          {!like?<HeartOutlined className="mr-1 mt-1 w-4"/>:<HeartFilled className="mr-1 mt-1 w-4"/>}Yêu thích tin
-        </Button>
-        <img className="rounded-2xl w-4/5 my-4 self-center h-96" src={post.image} />
-        
+        <div className="flex justify-between">
+          <h6>Đăng ngày: {post.create_at.split("T")[0]}</h6>
+          <Button
+            onClick={() => setLike(!like)}
+            color="light"
+            className="w-fit drop-shadow-md hover:text-red-600 hover:border-red-600 self-center text-red-500"
+          >
+            {!like ? (
+              <HeartOutlined className="mr-1 mt-1 w-4" />
+            ) : (
+              <HeartFilled className="mr-1 mt-1 w-4" />
+            )}
+            Yêu thích tin
+          </Button>
+        </div>
+
+        <img
+          className="rounded-2xl w-4/5 my-4 self-center h-96"
+          src={post.image}
+        />
+
         <h2 className="font-bold text-red-500 mt-2">{post.title}</h2>
         <ul className="text-lg ">
           <li className="flex my-2 text-teal-800">
@@ -78,7 +92,12 @@ const PostDetail = () => {
         </h4>
         {recommendPosts.map((post) => (
           <Link to={"../post-detail/" + post.id}>
-            <Card className="max-w-[350px]" renderImage={() => <img className="h-52" src={post.image} alt="" />}>
+            <Card
+              className="max-w-[350px]"
+              renderImage={() => (
+                <img className="h-52" src={post.image} alt="" />
+              )}
+            >
               <h4 className="font-bold tracking-tight text-gray-900 dark:text-white whitespace-nowrap overflow-hidden text-ellipsis">
                 {post.title}
               </h4>
