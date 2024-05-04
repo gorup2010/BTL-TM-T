@@ -248,7 +248,7 @@ const Register = memo(() => {
           </div>
 
           {/* <!-- Right Side --> */}
-          <div className="rounded-r-2xl hidden w-[430px] md:block bg-[url('/src/assets/images/register/image.png')]">
+          <div className="rounded-r-2xl hidden md:block bg-[url('/src/assets/images/register/image.png')]">
             <img src="" alt="" className="w-[430px] h-[629.6px] hidden" />
           </div>
 

@@ -196,8 +196,12 @@ const Login = memo(() => {
           </div>
 
           {/* <!-- Right Side --> */}
-          <div className="rounded-r-2xl hidden w-[430px] md:block bg-[url('/src/assets/images/login/image.png')]">
-            <img src="" alt="" className="w-[430px] h-[629.6px] hidden" />
+          <div className="rounded-r-2xl hidden md:block bg-[url('https://img.freepik.com/free-vector/family-moving-countryside-area-realtor-shows-townhouse-house-rent-booking-hose-online-best-rental-property-real-estate-services-concept-pinkish-coral-bluevector-isolated-illustration_335657-1959.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1708473600&semt=ais')]">
+            <img
+              src="https://img.freepik.com/free-vector/family-moving-countryside-area-realtor-shows-townhouse-house-rent-booking-hose-online-best-rental-property-real-estate-services-concept-pinkish-coral-bluevector-isolated-illustration_335657-1959.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1708473600&semt=ais"
+              alt=""
+              className="w-[430px] h-[629.6px] hidden"
+            />
           </div>
 
           {/* <!-- Close Button --> */}
