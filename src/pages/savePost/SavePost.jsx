@@ -4,13 +4,13 @@ import RentalPost from "./components/RentalPost";
 import EmptySection from "./components/EmptySection";
 import { Spin } from "antd";
 import Pagination from "./components/Pagination";
-import { getPost } from "../../service/post";
+import { getPosts } from "../../service/post";
 
 const SavePost = () => {
   const [page, setPage] = useState(1);
   const { isFetching, data } = useQuery({
     queryKey: ["posts"],
-    queryFn: () => getPost(),
+    queryFn: () => getPosts(),
   });
 
   const TOTAL_PAGE = 5;
