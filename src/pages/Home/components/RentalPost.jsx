@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
 import { FaRegUser } from "react-icons/fa";
 
-const RentalPost = ({title, createDateAgo, price, area, lessor, image}) => {
+const RentalPost = ({id, title, createDateAgo, price, area, lessor, image}) => {
 
     return (
-        <Link to={`post-detail/${title}`} className='flex items-center gap-5 '>
+        <Link to={`post-detail/${id}`} className='flex items-center gap-5 '>
             <div className='w-[250px] h-[250px] rounded-md overflow-hidden'>
                 <img 
                     className='object-cover h-full w-full'
