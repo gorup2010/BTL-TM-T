@@ -9,7 +9,16 @@ export const createPost = async (body) => {
   }
 };
 
-export const getPost = async () => {
+export const updatePosts = async ({ id, body }) => {
+  try {
+    const response = await http.put(`/posts/${id}`, body);
+    return response.data;
+  } catch (e) {
+    throw new Error("Create post failed");
+  }
+};
+
+export const getPosts = async () => {
   try {
     const response = await http.get("/posts");
     return response.data;
