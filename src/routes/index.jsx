@@ -50,7 +50,7 @@ export const routes = [
         element: <PostHistory />,
       },
       {
-        path: "history-money",
+        path: "recharge",
         element: <Recharge />,
       },
       {

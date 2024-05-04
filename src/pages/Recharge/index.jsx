@@ -26,7 +26,7 @@ const Recharge = () => {
 }
 
   return (
-    <div className="w-3/5 flex flex-col space-y-5">
+    <div className="col-start-3 col-span-8 my-3 max-w-[1536px] flex flex-col space-y-5">
       <h1 className="font-semibold text-4xl text-cyan-500">Nạp tiền</h1>
       <hr />
       <div className="text-xl">Số dư ví</div>

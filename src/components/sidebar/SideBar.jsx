@@ -82,11 +82,11 @@ const Sidebar = () => {
           <>
           
           <Link
-          to="/user/Recharge"
+          to="/user/recharge"
           onClick={() => setActiveTab(4)}
         >
           <div
-            onClick={() => navigate('user/Recharge')}
+            onClick={() => navigate('user/recharge')}
             className={
               activeTab === 4
                 ? 'my-1 p-3 hover:cursor-pointer hover:bg-[#E7E6EC] item bg-[#E7E6EC]'
