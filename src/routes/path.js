@@ -14,5 +14,6 @@ export const path = {
     payment_history: "/payment-history",
   },
   login: "/login",
+  register: "/register",
   not_found: "/*",
 };

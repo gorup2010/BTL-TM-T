@@ -38,7 +38,7 @@ const rentingTypes = [
 
 const Header = () => {
   const [isDropdownOpened, setIsDropdownOpened] = useState(false);
-  const {setActiveTab, setRentingTypeFilter} = useApp();
+  const {setActiveTab, setRentingTypeFilter, userInfo} = useApp();
   const optionsRef = useRef(null);
 
   const navigate = useNavigate();
@@ -99,7 +99,7 @@ return (
               className="flex justify-center items-center space-x-2"
             >
               <img
-                src={defaultUser}
+                src={userInfo?.avatar ?? defaultUser}
                 className="h-[30px] w-[30px] rounded-full border-solid border border-opacity-75 border-black"
               ></img>
               <CaretDownOutlined />
@@ -124,36 +124,46 @@ return (
                   className="flex justify-start items-center space-x-1 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                 >
                   <PlusCircleOutlined />
-                  <p>Đăng tin</p>
+                  {
+                    userInfo?.role === 'ADMIN' ? (
+                      <p>Duyệt bài đăng</p>
+                    ): (<p>Đăng tin</p>)
+                  }
                 </li>
-                <li
+                  {
+                    userInfo?.role !== "ADMIN" && (
+                      <>
+                       <li
                   onClick={() => routingHandler('/user/post-history', 2)}
                   className="flex justify-start items-center space-x-1 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                 >
                   <FileSearchOutlined />
                   <p>Lịch sử đăng tin</p>
                 </li>
-                <Link to="/save-post">
-                  <li className="flex justify-start items-center space-x-1 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                    <HeartOutlined />
-
-                    <p>Trang yêu thích</p>
-                  </li>
-                </Link>
                 <li
-                  onClick={() => routingHandler('/user/Recharge', 4)}
+                  onClick={() => routingHandler('/user/recharge', 4)}
                   className="flex justify-start items-center space-x-1 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                 >
                   <DollarOutlined />
                   <p>Nạp tiền</p>
                 </li>
-                  <li
-                    onClick={() => routingHandler('/user/history-money', 5)}
-                    className="flex justify-start items-center space-x-1 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >
-                    <HistoryOutlined />
-                    <p>Lịch sử nạp tiền</p>
-                  </li>
+                <li
+                  onClick={() => routingHandler('/user/history-money', 5)}
+                  className="flex justify-start items-center space-x-1 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  <HistoryOutlined />
+                  <p>Lịch sử nạp tiền</p>
+                </li>
+                <li
+                  onClick={() => routingHandler('/user/payment-history', 6)}
+                  className="flex justify-start items-center space-x-1 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  <HistoryOutlined />
+                  <p>Lịch sử thanh toán</p>
+                </li>
+                      </>
+                    )
+                  }
                 <li
                   onClick={logoutUser}
                   className="flex justify-start items-center space-x-1 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
