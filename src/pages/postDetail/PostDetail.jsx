@@ -32,7 +32,7 @@ const PostDetail = () => {
     <div className="flex mx-12 my-6 justify-center">
       <Card className="w-[55%] ml-8 mr-2 flex flex-col px-4">
         <div className="flex justify-between">
-          <h6>Đăng ngày: {post.create_at.split("T")[0]}</h6>
+          <h6>Đăng ngày: {post?.create_at?.split("T")[0]}</h6>
           <Button
             onClick={() => setLike(!like)}
             color="light"
