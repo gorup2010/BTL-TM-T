@@ -1,6 +1,5 @@
 import { createContext, useContext, useState } from 'react'
 
-
 const AppContext = createContext(undefined)
 
 export const AppProvider = ({ children }) => {

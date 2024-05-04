@@ -7,6 +7,9 @@ import NotFound from "../pages/notFound/NotFound";
 import PostNew from "../pages/postNew/PostNew";
 import PostHistory from "../pages/postHistory/PostHistory";
 import Login from "../pages/login/Login";
+import Home from "../pages/Home";
+import Recharge from "../pages/Recharge";
+import ServicesTable from "../pages/servicePrice/ServicesTable";
 import Register from "../pages/register/register";
 import Profile from "../pages/profile/Profile";
 import SavePost from "../pages/savePost/SavePost";
@@ -18,7 +21,11 @@ export const routes = [
     children: [
       {
         index: true,
-        element: <h1>Your content</h1>,
+        element: <Home />,
+      },
+      {
+        path: "services",
+        element: <ServicesTable />,
       },
       {
         path: path.default.save_post,
@@ -43,10 +50,18 @@ export const routes = [
         element: <PostHistory />,
       },
       {
+        path: "recharge",
+        element: <Recharge />,
+      },
+      {
         path: "profile",
         element: <Profile />,
       },
     ],
+  },
+  {
+    path: "history-money",
+    element: <Recharge />,
   },
   {
     path: path.login,
