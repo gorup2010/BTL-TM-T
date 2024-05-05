@@ -26,6 +26,7 @@ const RequiredAuth = ({ children }) => {
   }, [data])
 
   const isAuthorized = isLogin && userInfo
+  console.log(123)
 
   if (isFetching) {
     return (

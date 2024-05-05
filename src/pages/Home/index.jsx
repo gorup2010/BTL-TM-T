@@ -1,6 +1,6 @@
 import Grid from "@mui/system/Unstable_Grid/Grid";
 import { Box } from "@mui/system";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Select, Button, Pagination } from "flowbite-react";
 import { IoMdSearch } from "react-icons/io";
 import { posts } from "../../data/post";
@@ -44,6 +44,11 @@ const Home = () => {
     retry: 2
 })
 
+const [dataRv, setDataRv] = useState([])
+
+useEffect(() => {
+  setDataRv(data?.reverse()?.map(item => item))
+}, [data])
 
   return (
     <>
@@ -121,9 +126,11 @@ const Home = () => {
             </Grid>
           </Grid>
         </div>
-        <div className="grid grid-cols-[1.6fr_1fr] mx-auto w-full  max-w-[1200px] content-center mt-10">
+        <div className="flex mx-[190px] mt-[30px]">
+        <div className="flex flex-col gap-[30px]">
         {data?.length > 0
-          ? data?.filter(post => post.is_accept === true)?.map((post, i) => {
+          ? dataRv?.map((post, i) => {
+            console.log(post.area)
           return (
               <RentalPost 
                   refetch={refetch}
@@ -134,8 +141,10 @@ const Home = () => {
           })
           : <p className="text-sm font-semibold text-[#0891B2]">Không có yêu cầu đăng tin</p>
       }
-          <RentalFilterList />
         </div>
+        <RentalFilterList />
+        </div>
+
       </div>
       <div className="flex overflow-x-auto sm:justify-center mb-10">
         <Pagination

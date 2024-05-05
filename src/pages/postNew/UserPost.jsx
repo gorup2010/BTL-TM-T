@@ -66,7 +66,7 @@ const UserPost = () => {
             ward: e.target.ward.value,
             district: e.target.district.value,
             city: e.target.city.value,
-            username: userInfo?.username,
+            username: userInfo?.full_name,
             is_accept: false,
             is_reject: false,
             create_at: new Date()
@@ -123,7 +123,8 @@ const UserPost = () => {
                                 <div className="items-center mt-8 w-full ml-4">
                                     <label className="mb-2 block w-full [font-family:'Poppins-Medium',Helvetica] font-medium text-black text-lg" htmlFor="district" required>Quận/ Huyện</label>
                                     <select  onChange={e => {
-                                      setWard(district[e.target.value]?.wards?.map(item => item.name))
+                                        const index = district?.findIndex(item => item.name === e.target.value)
+                                      setWard(district[index]?.wards?.map(item => item.name))
                                     }} name="district" id="district" className='px-3 block w-full h-10 outline-none rounded-[4px] border border-solid border-[#cccccc]'>
                                         {district?.length ? district.map((item, idx)=> {
                                             return (

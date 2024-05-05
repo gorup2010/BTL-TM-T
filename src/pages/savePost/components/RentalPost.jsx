@@ -17,7 +17,7 @@ const RentalPost = ({
 }) => {
   const isAuthenticated = localStorage.getItem("token") != null;
   return (
-    <Link to={`/post-detail/${id}`}>
+    <Link to={`/posts/${id}`}>
       <div className="flex items-center gap-5">
         <div className="w-[250px] h-[250px] rounded-md overflow-hidden">
           <img

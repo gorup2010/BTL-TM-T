@@ -43,6 +43,7 @@ const EditProfile = (props) => {
       };
     });
   };
+  
   const handleSubmit = (e) => {
     setIsSuccess(false);
     e.preventDefault();

@@ -21,7 +21,7 @@ const AdminPost = () => {
                     Yêu cầu đăng tin
                 </div>
 
-                <div className="flex w-[70vw]">
+                <div className="flex flex-col gap-[20px] w-[70vw]">
                 {data?.length > 0
                     ? data?.filter(post => post.is_accept === false && post.is_reject === false)?.map((post, i) => {
                     return (

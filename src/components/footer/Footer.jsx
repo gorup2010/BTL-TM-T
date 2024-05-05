@@ -2,13 +2,15 @@ import { Link } from 'react-router-dom';
 import facebookIcon from "../../assets/images/footer/facebook.png"
 import youtubeIcon from '../../assets/images/footer/youtube.png';
 import zaloIcon from '../../assets/images/footer/zalo.png';
+import Logo from "../../assets/images/icon";
 
 const Footer =() => {
   return (
     <footer className="bg-white container mx-auto px-10 py-4 border-t-2 border-t-gray-300">
       <div className="flex flex-col lg:flex-row justify-between items-start space-y-4 md:space-y-0  mx-auto px-10 py-0">
         <section>
-          <span className="text-4xl text-cyan-600 font-semibold">
+          <span className="flex space-x-2 items-center text-4xl text-cyan-600 font-semibold">
+            <Logo />
             <Link to="/">BKInn</Link>
           </span>
         </section>
