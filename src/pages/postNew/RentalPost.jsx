@@ -12,6 +12,9 @@ const RentalPost = ({post}) => {
 
     const {mutate: updatePostMutation } = useMutation({ mutationFn: updatePosts })
 
+    const pathname = window.location.pathname
+
+
     const onReject = () => {
         let body = post
         body.is_reject = true
@@ -22,7 +25,7 @@ const RentalPost = ({post}) => {
             onSuccess: () => {
                 notification.success({
                 message: 'Success',
-                description: 'Duyệt bài đăng thành công'
+                description: 'Đã từ chối bài đăng!'
                 })
                 queryClient.invalidateQueries()
             },
@@ -39,7 +42,7 @@ const RentalPost = ({post}) => {
             onSuccess: () => {
                 notification.success({
                 message: 'Success',
-                description: 'Đã từ chối bài đăng!'
+                description: 'Duyệt bài đăng thành công!'
                 })
                 queryClient.invalidateQueries()
             },
@@ -71,7 +74,7 @@ const RentalPost = ({post}) => {
                         <FaRegUser />
                         <p>{username}</p>
                     </div>
-                    {isAuthenticated && 
+                    {isAuthenticated &&
                         <div className="flex items-center gap-2 translate-x-2">
                             <button className='bg-[#0891B2] text-white text-sm px-2 py-1 rounded-md'>Gọi {`0${phone_num}`} </button>
                             <button className='border-[#0891B2] border text-[#0891B2] text-sm px-2 py-1 rounded-md'>Nhắn Zalo </button>
@@ -79,10 +82,14 @@ const RentalPost = ({post}) => {
                     }
                 </div>
             </div>
-            <div className='m-2 flex justify-end gap-[10px] w-full'>
-                <Button type='primary' onClick={onAccept} style={{background: 'green'}}  >Duyệt bài đăng</Button>
-                <Button type='primary' onClick={onReject} danger >Từ chối</Button>
-            </div>
+            {
+                pathname !== '/' && (
+                <div className='m-2 flex justify-end gap-[10px] w-full'>
+                    <Button type='primary' onClick={onAccept} style={{background: 'green'}}  >Duyệt bài đăng</Button>
+                    <Button type='primary' onClick={onReject} danger >Từ chối</Button>
+                </div>
+                )
+            }
             </div>
         </div>
     )

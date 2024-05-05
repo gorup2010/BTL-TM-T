@@ -13,6 +13,7 @@ import ServicesTable from "../pages/servicePrice/ServicesTable";
 import Register from "../pages/register/register";
 import Profile from "../pages/profile/Profile";
 import SavePost from "../pages/savePost/SavePost";
+import PostDetail from '../pages/postDetail/PostDetail'
 
 export const routes = [
   {
@@ -30,6 +31,10 @@ export const routes = [
       {
         path: path.default.save_post,
         element: <SavePost></SavePost>,
+      },
+      {
+        path: "post-detail/:id",
+        element: <PostDetail/>
       },
     ],
   },

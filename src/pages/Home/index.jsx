@@ -11,6 +11,10 @@ import {
   priceFilter,
   universityFilter,
 } from "./components/constant";
+import { useQuery } from "@tanstack/react-query";
+import { useApp } from "../../provider/AppProvider";
+import { getPosts } from "../../service/post";
+import RentalPost from "../postNew/RentalPost";
 
 
 const selectedStyle =
@@ -19,6 +23,8 @@ const nonSelectedStyle =
   "hover:bg-cyan-500 hover:text-white text-center font-medium text-sm rounded-t-md flex justify-center items-center";
 
 const Home = () => {
+  const {isLogin} = useApp()
+
   const [type, setType] = useState(1);
   const [page, setPage] = useState(1);
   const [currentPosts, setCurrentPosts] = useState(
@@ -29,6 +35,15 @@ const Home = () => {
     setPage(newPage);
     setCurrentPosts(posts.slice((newPage - 1) * 5, newPage * 5 - 1));
   };
+
+  const { data, refetch } = useQuery({
+    queryKey: ['posts', isLogin],
+    queryFn: getPosts,
+    staleTime: 0,
+    refetchOnWindowFocus: false,
+    retry: 2
+})
+
 
   return (
     <>
@@ -107,7 +122,18 @@ const Home = () => {
           </Grid>
         </div>
         <div className="grid grid-cols-[1.6fr_1fr] mx-auto w-full  max-w-[1200px] content-center mt-10">
-          <PostList postsInfo={currentPosts} />
+        {data?.length > 0
+          ? data?.filter(post => post.is_accept === true)?.map((post, i) => {
+          return (
+              <RentalPost 
+                  refetch={refetch}
+                  key={i}
+                  post={post}
+              />
+          )
+          })
+          : <p className="text-sm font-semibold text-[#0891B2]">Không có yêu cầu đăng tin</p>
+      }
           <RentalFilterList />
         </div>
       </div>

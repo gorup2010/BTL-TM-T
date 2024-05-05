@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useApp } from '../../provider/AppProvider';
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const PostHistory = () => {
   const navigate = useNavigate();

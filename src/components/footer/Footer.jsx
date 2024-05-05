@@ -1,10 +1,9 @@
-import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import facebookIcon from "../../assets/images/footer/facebook.png"
 import youtubeIcon from '../../assets/images/footer/youtube.png';
 import zaloIcon from '../../assets/images/footer/zalo.png';
 
-const Footer = memo(() => {
+const Footer =() => {
   return (
     <footer className="bg-white container mx-auto px-10 py-4 border-t-2 border-t-gray-300">
       <div className="flex flex-col lg:flex-row justify-between items-start space-y-4 md:space-y-0  mx-auto px-10 py-0">
@@ -50,6 +49,6 @@ const Footer = memo(() => {
       </div>
     </footer>
   );
-});
+}
 
 export default Footer;

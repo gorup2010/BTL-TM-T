@@ -18,6 +18,15 @@ export const updatePosts = async ({ id, body }) => {
   }
 };
 
+export const getPostById = async (id) => {
+  try {
+    const response = await http.get(`/posts/${id}`);
+    return response.data;
+  } catch (e) {
+    throw new Error("Get post failed");
+  }
+};
+
 export const getPosts = async () => {
   try {
     const response = await http.get("/posts");

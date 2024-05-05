@@ -5,9 +5,11 @@ import { useForm } from "react-hook-form";
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { getUser } from "../../service/user";
+import { useApp } from "../../provider/AppProvider";
 
 // eslint-disable-next-line react/display-name
 const Login = memo(() => {
+  const {setIsLogin} = useApp()
   localStorage.clear();
 
   const [isPending, setIsPending] = useState(false);
@@ -35,6 +37,7 @@ const Login = memo(() => {
       password: ``,
     },
   });
+
   const submitHandler = async (data) => {
     console.log(data);
     console.log(users);
@@ -46,6 +49,7 @@ const Login = memo(() => {
         localStorage.setItem("userId", user.id);
         setIsPending(false);
         navigate("/");
+        setIsLogin(true)
       }
     }
 
