@@ -33,7 +33,7 @@ export const routes = [
         element: <SavePost></SavePost>,
       },
       {
-        path: "post-detail/:id",
+        path: "posts/:id",
         element: <PostDetail/>
       },
     ],

@@ -12,7 +12,7 @@ const PostHistory = () => {
   };
 
   const postFilter = (post) => post.username === userInfo.username;
-  const filter = posts.filter(postFilter)
+  const filter = posts?.filter(postFilter)
 
   useEffect(() => {
     getPosts();
@@ -43,7 +43,7 @@ const PostHistory = () => {
             </th>
           </thead>
           <tbody className="text-sm">
-            {(filter.length() > 0) ? filter.map(post => {
+            {(filter?.length > 0) ? filter?.map(post => {
               return (
                 <>
                   <tr

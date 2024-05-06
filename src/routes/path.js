@@ -2,7 +2,7 @@ export const path = {
   default: {
     index: "/",
     save_post: "/save-post",
-    post_detail: "/post-detail/:id",
+    post_detail: "/posts/:id",
     services: "/services",
   },
   user: {

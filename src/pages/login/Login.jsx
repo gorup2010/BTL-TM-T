@@ -9,7 +9,7 @@ import { useApp } from "../../provider/AppProvider";
 
 // eslint-disable-next-line react/display-name
 const Login = memo(() => {
-  const {setIsLogin} = useApp()
+  const {setIsLogin,setUserInfo} = useApp()
   localStorage.clear();
 
   const [isPending, setIsPending] = useState(false);
@@ -38,18 +38,16 @@ const Login = memo(() => {
     },
   });
 
-  const submitHandler = async (data) => {
-    console.log(data);
-    console.log(users);
+  const submitHandler = async (data) => { 
     setIsError("");
     setIsPending(true);
-    for (const user of users) {
-      console.log();
+    for (const user of users) { 
       if (user.username === data.username && user.password === data.password) {
         localStorage.setItem("userId", user.id);
         setIsPending(false);
         navigate("/");
         setIsLogin(true)
+        setUserInfo(user)
       }
     }
 

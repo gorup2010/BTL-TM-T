@@ -28,10 +28,8 @@ const PostDetail = () => {
   }, [id]);
 
   const recommendPosts = posts.filter(
-    (data) => data.zone === post.zone && data.id !== post.id
+    (data) => data.city === post.city && data.id !== post.id
   );
-
-  console.log(posts)
 
   return (
     <div className="flex mx-12 my-6 justify-center">
@@ -54,17 +52,17 @@ const PostDetail = () => {
 
         <img
           className="rounded-2xl w-4/5 my-4 self-center h-96"
-          src={''}
+          src={post.images?.[0]}
         />
 
         <h2 className="font-bold text-red-500 mt-2">{post.title}</h2>
         <ul className="text-lg ">
           <li className="flex my-2 text-teal-800">
-            <CurrencyDollarIcon className="w-6 mx-2" /> Giá thuê: {post.price}{" "}
+            <CurrencyDollarIcon className="w-6 mx-2" /> Giá thuê: {Math.ceil(post.price/10000)/100}  
             triệu/tháng
           </li>
           <li className="flex my-2 text-red-800">
-            <MapPinIcon className="w-6 mx-2" /> Khu vực: {post.zone}
+            <MapPinIcon className="w-6 mx-2" /> Khu vực: {post.city}
           </li>
           <li className="flex my-2 text-blue-800">
             <ArrowsPointingOutIcon className="w-6 mx-2" /> Diện tích:{" "}
@@ -95,12 +93,12 @@ const PostDetail = () => {
         <h4 className="font-semibold mt-4 text-yellow-900 flex self-center">
           <StarIcon className="w-4" /> ĐỀ XUẤT PHÒNG CÙNG KHU VỰC
         </h4>
-        {recommendPosts.map((post) => (
-          <Link to={"../post-detail/" + post.id}>
+        {recommendPosts.map((post, index) => (
+          <Link key={index} to={`../../posts/${post.id}`}>
             <Card
               className="max-w-[350px]"
               renderImage={() => (
-                <img className="h-52" src={post.image} alt="" />
+                <img className="h-52" src={post.images?.[0]} alt="" />
               )}
             >
               <h4 className="font-bold tracking-tight text-gray-900 dark:text-white whitespace-nowrap overflow-hidden text-ellipsis">
@@ -109,18 +107,16 @@ const PostDetail = () => {
               <ul className="text flex justify-between text-xs">
                 <li className="flex mb-2 text-teal-800">
                   <CurrencyDollarIcon className="w-4 mx-1" />
-                  {post.price} triệu/tháng
+                  {Math.ceil(post.price/10000)/100} triệu/tháng
                 </li>
                 <li className="flex mb-2 text-red-800">
                   <MapPinIcon className="w-4 mx-1" />
-                  {post.zone}
+                  {post.city}
                 </li>
-                <li className="flex mb-2 text-blue-800">
+                <li className="flex mb-2 text-blue-800 flex items-center">
                   <ArrowsPointingOutIcon className="w-4 mx-1" />
                   {post.area}
-                  <span>
-                    m<sup>2</sup>
-                  </span>
+                  <span> m<sup>2</sup></span>
                 </li>
               </ul>
             </Card>

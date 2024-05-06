@@ -38,7 +38,7 @@ const rentingTypes = [
 
 const Header = () => {
   const [isDropdownOpened, setIsDropdownOpened] = useState(false);
-  const { setActiveTab, setRentingTypeFilter, userInfo } = useApp();
+  const { setActiveTab, setRentingTypeFilter, userInfo, setIsLogin } = useApp();
   const optionsRef = useRef(null);
 
   const navigate = useNavigate();
@@ -58,6 +58,7 @@ const Header = () => {
   const logoutUser = () => {
     localStorage.clear();
     navigate("/login");
+    setIsLogin(false)
   };
 
   useEffect(() => {
@@ -123,7 +124,7 @@ const Header = () => {
                   >
                     <PlusCircleOutlined />
                     {userInfo?.role === "ADMIN" ? (
-                      <p>Duyệt bài đăng</p>
+                      <p>Xác minh bài đăng</p>
                     ) : (
                       <p>Đăng tin</p>
                     )}
